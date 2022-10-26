@@ -1,17 +1,17 @@
 image: node:19-alpine
-
 pages:
   cache:
     paths:
-    - node_modules/
-
-  stage: deploy
+      - node_modules/
   script:
-  - npm install -g @angular/cli@14.2.7
-  - npm install
-  - ng build
-  - mkdir -p public
-  - mv dist/payroll-frontend public/
+    - npm install -g @angular/cli@14.2.7
+    - npm install
+    - npm run start
+    - mkdir public
+    - cp -r /dist/payroll-frontend/. /public
+  artifacts:
+    paths:
+      - public
   only:
-  - main
-  - pages
+    - master
+    - pages
