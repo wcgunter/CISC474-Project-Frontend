@@ -12,9 +12,6 @@ pages:
   - ng build
   - mkdir -p public
   - mv dist/payroll-frontend public/
-  artifacts:
-    paths:
-    - public
   only:
   - main
   - pages
