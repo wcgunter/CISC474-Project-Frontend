@@ -8,7 +8,7 @@ pages:
     - npm install
     - ng build
     - mkdir public
-    - cp -r /dist/payroll-frontend/. /public
+    - cp -a dist/payroll-frontend/. public/
   artifacts:
     paths:
       - public
