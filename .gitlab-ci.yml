@@ -6,7 +6,7 @@ pages:
   script:
     - npm install -g @angular/cli@14.2.7
     - npm install
-    - npm run start
+    - ng build
     - mkdir public
     - cp -r /dist/payroll-frontend/. /public
   artifacts:
