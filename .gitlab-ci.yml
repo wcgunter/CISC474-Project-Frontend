@@ -8,7 +8,7 @@ install_dependencies:
   script:
     - npm install
   only:
-    - master
+    - main
   cache:
     paths:
       - node_modules/
@@ -18,6 +18,8 @@ build_site:
   stage: build_site
   script:
     - ng build
+  only:
+    - main
   artifacts:
     paths:
       - public/
