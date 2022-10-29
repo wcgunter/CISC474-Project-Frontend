@@ -1,28 +1,16 @@
-stages:
-  - install_dependencies
-  - build_site
-
-install_dependencies:
-  image: node:19-alpine
-  stage: install_dependencies
-  script:
-    - npm install
-  only:
-    - main
+image: node:latest
+build-site:
   cache:
     paths:
       - node_modules/
-
-build_site:
-  image: node:19-alpine
-  stage: build_site
   script:
-    - ng build
-  only:
-    - main
+    -npm install -g @angular/cli@14.2.7
+    -npm install
+    -ng build
   artifacts:
     paths:
       - public/
-  cache:
-    paths:
-      - node_modules/
+    expire_in: 1 week
+  only:
+    - main
+    
