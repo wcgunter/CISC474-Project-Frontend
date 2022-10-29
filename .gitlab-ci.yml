@@ -1,10 +1,10 @@
 stages:
-  - dependencies
-  - build
+  - install_dependencies
+  - build_site
 
 install_dependencies:
   image: node:19-alpine
-  stage: dependencies
+  stage: install_dependencies
   script:
     - npm install
   only:
@@ -15,7 +15,7 @@ install_dependencies:
 
 build_site:
   image: node:19-alpine
-  stage: build
+  stage: build_site
   script:
     - ng build
   artifacts:
