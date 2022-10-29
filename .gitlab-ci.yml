@@ -4,13 +4,13 @@ build-site:
     paths:
       - node_modules/
   script:
-    -npm install -g @angular/cli@14.2.7
-    -npm install
-    -ng build
+    - npm install -g @angular/cli@14.2.7
+    - npm install
+    - ng build
   artifacts:
     paths:
       - public/
     expire_in: 1 week
   only:
     - main
-    
+
