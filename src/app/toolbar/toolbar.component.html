@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <mat-toolbar>
-    <button mat-icon-button>
+    <button mat-icon-button [matMenuTriggerFor]="mainMenu">
         <mat-icon>menu</mat-icon>
     </button>
-    <span>Payroll 24/7</span>
+    <mat-menu #mainMenu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>punch_clock</mat-icon>
+            <span>Clock In/Out</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>work_history</mat-icon>
+            <span>Timesheet History</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>person_search</mat-icon>
+            <span>Employee Search</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+        </button>
+    </mat-menu>
+    <span class="toolbar-title">Payroll 24/7</span>
     <span class="spacer"></span>
-    <button mat-icon-button>
+    <button mat-icon-button [matMenuTriggerFor]="profileMenu">
         <mat-icon>account_circle</mat-icon>
     </button>
+    <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>badge</mat-icon>
+            <span>Your Info</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>supervised_user_circle</mat-icon>
+            <span>View Managers</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>manage_accounts</mat-icon>
+            <span>Profile Options</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
 </mat-toolbar>
