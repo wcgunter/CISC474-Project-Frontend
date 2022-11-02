@@ -6,7 +6,7 @@ build-site:
   script:
     - npm install -g @angular/cli@14.2.7
     - npm install
-    - ng build
+    - ng build --base-href /payroll-frontend/
   artifacts:
     paths:
       - public/
