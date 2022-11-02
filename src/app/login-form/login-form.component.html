@@ -1,23 +1,25 @@
-<mat-card class="loginCard">
-    <mat-card-title>Login</mat-card-title>
-    <mat-card-content>
-        <form [formGroup]="form" (ngSubmit)="submit()">
-            <p>
-                <mat-form-field>
-                    <mat-label>Username</mat-label>
-                    <input type="text" matInput placeholder="Username" formControlName="username" />
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field>
-                    <mat-label>Password</mat-label>
-                    <input type="password" matInput placeholder="Password" formControlName="password" />
-                </mat-form-field>
-            </p>
-            <p *ngIf="error" class="error">
-                {{ error }} 
-            </p>
-            <button mat-raised-button color="primary" type="submit">Login</button>
-        </form>
-    </mat-card-content>
-</mat-card>
+<div class="fullscreenDiv">
+    <mat-card class="loginCard">
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <p>
+                    <mat-form-field class="textForm" appearance="fill">
+                        <mat-label>Username</mat-label>
+                        <input class="textInput" type="text" matInput placeholder="Username" formControlName="username" />
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput placeholder="Password" formControlName="password" />
+                    </mat-form-field>
+                </p>
+                <p *ngIf="error" class="error">
+                    {{ error }}
+                </p>
+                <button class="loginButton" mat-raised-button color="primary" type="submit">Login</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

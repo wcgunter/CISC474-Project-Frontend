@@ -9,6 +9,14 @@ mat-card-content {
     justify-content: center;
 }
 
+//make title have 5% margin from top of card
+.mat-card-title {
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 8rem;
+    margin: 0 0 0 0;
+}
+
 .error {
     padding: 16px;
     width: 300px;
@@ -22,7 +30,33 @@ mat-card-content {
 }
 
 .loginCard {
-    width: 350px;
-    margin: 0 auto;
-    margin-top: 2.5%;
+    width: 450px;
+    height: 550px;
+    max-height: 50rem;
+    position: absolute;
+    margin-top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.fullscreenDiv {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#e66465, #9198e5);
+    position: relative;
+}
+
+.loginButton {
+    flex: 1 1 auto;
+    left: 100%;
+    transform: translate(-100%, 0);
+    transform: translate(-100%, 150%);
+}
+
+:host ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 16px;
+    outline: auto #a6a6a6;
+  }
+:host ::ng-deep .mat-form-field-underline {
+    display: none;
 }
