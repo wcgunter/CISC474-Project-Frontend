@@ -1,16 +1,15 @@
 image: node:latest
-build-site:
+pages:
   cache:
     paths:
       - node_modules/
   script:
     - npm install -g @angular/cli@14.2.7
     - npm install
-    - ng build
+    - npm run buildProd
   artifacts:
     paths:
-      - public/
-    expire_in: 1 week
+      - public
   only:
     - main
-
+    - pages
