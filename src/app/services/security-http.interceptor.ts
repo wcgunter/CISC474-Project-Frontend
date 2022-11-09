@@ -13,7 +13,7 @@ export class SecurityHttpInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const token = this.secSvc.token;
         const newReq = req.clone({
-            headers: req.headers.set('Authorization', this.secSvc.token)
+            headers: req.headers.set('Authorization', 'bearer ' + this.secSvc.token)
         });
         return next.handle(newReq);
     }

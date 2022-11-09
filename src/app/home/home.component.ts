@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 import { SecurityService } from '../services/security.service';
 import { TestService } from '../test.service';
 
@@ -10,7 +11,7 @@ import { TestService } from '../test.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public sharedSvc:TestService, private secService: SecurityService, private router: Router) { }
+  constructor(public sharedSvc:TestService, private secService: SecurityService, private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
     if (!this.secService.loggedIn) this.router.navigate(['/login']);
@@ -18,6 +19,12 @@ export class HomeComponent implements OnInit {
 
   onClick() {
     this.sharedSvc.sharedValue++;
+  }
+  
+  getLogs(){
+    this.apiService.getLogs().then((logs)=>{
+      console.log(logs);
+    })
   }
 
 }
