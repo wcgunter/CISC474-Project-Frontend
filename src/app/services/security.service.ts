@@ -1,11 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { serviceUrl } from '../config';
-
-interface ApiResponse {
-    status: string;
-    data: any;
-}
+import { ApiResponse } from '../types';
 
 @Injectable({
     providedIn: 'root'
