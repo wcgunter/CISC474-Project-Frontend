@@ -11,6 +11,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 //All material components
 import { MaterialModule } from './material/material.module';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
