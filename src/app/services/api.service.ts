@@ -4,29 +4,29 @@ import { serviceUrl } from '../config';
 import { ApiResponse } from '../types';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ApiService {
 
-  url: string = serviceUrl;
-  commands = {
-    logs: '/api/employee/logs',
-  };
+    url: string = serviceUrl;
+    commands = {
+        logs: '/api/employee/logs',
+    };
 
-  constructor(private http:HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  logs(): Promise<boolean> {
-    return new Promise((resolve, reject) => {
-        const req = this.http.get<ApiResponse>(this.url + this.commands.logs);
-        req.subscribe({
-            next: (v) => {
-                resolve(true);
-            },
-            error: (e) => {
-                reject(e)
-            }
+    getLogs(): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            const req = this.http.get<ApiResponse>(this.url + this.commands.logs);
+            req.subscribe({
+                next: (v) => {
+                    resolve(true);
+                },
+                error: (e) => {
+                    reject(e)
+                }
+            })
         })
-    })
-}
+    }
 
 }
