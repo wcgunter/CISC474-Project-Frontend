@@ -13,6 +13,8 @@ import { MaterialModule } from './material/material.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityHttpInterceptor } from './services/security-http.interceptor';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { SecurityHttpInterceptor } from './services/security-http.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [  { provide: HTTP_INTERCEPTORS, useClass: SecurityHttpInterceptor, multi: true }],
   bootstrap: [AppComponent]
