@@ -11,6 +11,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 //All material components
 import { MaterialModule } from './material/material.module';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { TimesheetViewerComponent } from './timesheet-viewer/timesheet-viewer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     HomeComponent,
     AboutComponent,
     ToolbarComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    TimesheetViewerComponent
   ],
   imports: [
     BrowserModule,
