@@ -37,6 +37,7 @@ mat-card-content {
     margin-top: 5%;
     left: 50%;
     transform: translate(-50%, 0);
+    border-radius: 15px;
 }
 
 .fullscreenDiv {
@@ -54,7 +55,7 @@ mat-card-content {
 }
 
 :host ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-    border-radius: 16px;
+    border-radius: 15px;
     outline: auto #a6a6a6;
   }
 :host ::ng-deep .mat-form-field-underline {
