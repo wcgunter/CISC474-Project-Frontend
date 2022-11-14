@@ -1,0 +1,1 @@
+export const serviceUrl = 'https://cisc474-group1-payroll-api.herokuapp.com'
