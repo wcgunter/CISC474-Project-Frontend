@@ -11,10 +11,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 //All material components
 import { MaterialModule } from './material/material.module';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { TimesheetViewerComponent } from './timesheet-viewer/timesheet-viewer.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityHttpInterceptor } from './services/security-http.interceptor';
 import { FormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     ToolbarComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    TimesheetViewerComponent
   ],
   imports: [
     BrowserModule,
