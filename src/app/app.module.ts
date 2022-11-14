@@ -12,6 +12,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MaterialModule } from './material/material.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { TimesheetViewerComponent } from './timesheet-viewer/timesheet-viewer.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SecurityHttpInterceptor } from './services/security-http.interceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,11 @@ import { TimesheetViewerComponent } from './timesheet-viewer/timesheet-viewer.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [  { provide: HTTP_INTERCEPTORS, useClass: SecurityHttpInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
