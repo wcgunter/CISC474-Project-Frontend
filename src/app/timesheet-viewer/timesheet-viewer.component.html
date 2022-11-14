@@ -1,39 +1,61 @@
 <div class="fullscreenDiv flex-container-main">
-    <div class="flex-container-row">
-        <mat-card class="dateSelectorCard">
-            <p>Select a date range:</p>
-            <form [formGroup]="group">
-                <mat-form-field>
-                  <mat-placeholder>Start DateTime</mat-placeholder>
-                  <mat-datetimepicker-toggle
-                    [for]="datetimePicker"
-                    matSuffix
-                  ></mat-datetimepicker-toggle>
-                  <mat-datetimepicker
-                    #datetimePicker
-                    type="datetime"
-                    [openOnFocus]="true"
-                    [timeInterval]="5"
-                  >
-                  </mat-datetimepicker>
-                  <input
-                    matInput
-                    formControlName="inputbox"
-                    [matDatetimepicker]="datetimePicker"
-                    required
-                    autocomplete="false"
-                  />
-                </mat-form-field>
-              </form>
-        </mat-card>
-    </div>
-    <div class="flex-container-row">
-        <mat-card class="dateSelectorCard">
-        </mat-card>
-    </div>
-    <div class="flex-container-row">
-        <mat-card class="dateSelectorCard">
-            <button mat-raised-button (click)="test()">test</button>
-                </mat-card>
-    </div>
+  <div class="flex-container-row">
+      <mat-card class="dateSelectorCard">
+          <p>Select a date range:</p>
+          <form [formGroup]="startTimeGroup">
+              <mat-form-field>
+                <mat-placeholder>Start Date & Time</mat-placeholder>
+                <mat-datetimepicker-toggle
+                  [for]="datetimePicker"
+                  matSuffix
+                ></mat-datetimepicker-toggle>
+                <mat-datetimepicker
+                  #datetimePicker
+                  type="datetime"
+                  [openOnFocus]="true"
+                  [timeInterval]="5"
+                >
+                </mat-datetimepicker>
+                <input
+                  matInput
+                  formControlName="inputbox"
+                  [matDatetimepicker]="datetimePicker"
+                  required
+                  autocomplete="false"
+                />
+              </mat-form-field>
+            </form>
+            <form [formGroup]="endTimeGroup">
+              <mat-form-field>
+                <mat-placeholder>End Date & Time</mat-placeholder>
+                <mat-datetimepicker-toggle
+                  [for]="datetimePicker"
+                  matSuffix
+                ></mat-datetimepicker-toggle>
+                <mat-datetimepicker
+                  #datetimePicker
+                  type="datetime"
+                  [openOnFocus]="true"
+                  [timeInterval]="5"
+                >
+                </mat-datetimepicker>
+                <input
+                  matInput
+                  formControlName="inputbox"
+                  [matDatetimepicker]="datetimePicker"
+                  required
+                  autocomplete="false"
+                />
+              </mat-form-field>
+            </form>
+      </mat-card>
+  </div>
+  <div class="flex-container-row">
+      <mat-card class="dateSelectorCard">
+      </mat-card>
+  </div>
+  <div class="flex-container-row">
+      <mat-card class="dateSelectorCard">
+      </mat-card>
+  </div>
 </div>

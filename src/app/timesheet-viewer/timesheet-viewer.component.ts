@@ -10,7 +10,8 @@ import { MatDatetimepickerFilterType } from '@mat-datetimepicker/core';
 })
 
 export class TimesheetViewerComponent implements OnInit {
-  group: FormGroup;
+  startTimeGroup: FormGroup;
+  endTimeGroup: FormGroup;
   today = new Date();
   tomorrow = new Date();
   min = new Date();
@@ -18,8 +19,12 @@ export class TimesheetViewerComponent implements OnInit {
   start = new Date();
   filter: (date: Date, type: MatDatetimepickerFilterType) => boolean;
 
-  get selecteTime():string{
-    return this.group.controls['inputbox'].value;
+  get getStartTime():string{
+    return this.startTimeGroup.controls['inputbox'].value;
+  }
+
+  get getEndTime():string{
+    return this.endTimeGroup.controls['inputbox'].value;
   }
 
   constructor(fb: FormBuilder) { 
@@ -47,27 +52,16 @@ export class TimesheetViewerComponent implements OnInit {
       }
     };
 
-    this.group = fb.group({
-      /*
-      dateTime: [new Date('2017-11-09T12:10:00.000Z'), Validators.required],
-      dateTimeYear: [new Date('2017-11-09T12:10:00.000Z'), Validators.required],
-      date: [null, Validators.required],
-      time: [null, Validators.required],
-      timeAMPM: [null, Validators.required],
-      month: [null, Validators.required],
-      year: [null, Validators.required],
-      mintest: [this.today, Validators.required],
-      filtertest: [this.today, Validators.required],
-      touch: [null, Validators.required],
-      preventsame: [new Date('2020-11-19T17:00:00.000Z'), Validators.required],
-      */
+    this.startTimeGroup = fb.group({
      inputbox:[null,Validators.required]
     });
+
+    this.endTimeGroup = fb.group({
+      inputbox:[null,Validators.required]
+     });
   }
   ngOnInit(): void {
     
   }
-  test():void{
-    console.log(this.selecteTime)
-  }
+
 }
