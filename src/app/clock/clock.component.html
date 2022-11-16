@@ -1,1 +1,10 @@
-<p>clock works!</p>
+<div class="fullscreenDiv">
+    <mat-card class="clockCard">
+        <mat-card-title>Clock In/Out</mat-card-title>
+        <mat-card-content class="currentTime">
+            <div>TimeZone: {{dateTime | date:'zzzz'}}</div>
+            <div>{{dateTime | date:'medium'}} </div>
+            <button class="clockButton" mat-raised-button color="primary" type="submit">Clock In</button>
+        </mat-card-content>
+    </mat-card>
+</div>

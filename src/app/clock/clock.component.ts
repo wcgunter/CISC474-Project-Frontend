@@ -10,9 +10,14 @@ import {CookieService} from 'ngx-cookie-service';
 })
 export class ClockComponent implements OnInit {
 
+  dateTime: Date = new Date()
+
   constructor(private apiService: ApiService, private cookieService : CookieService) { }
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.dateTime = new Date()
+    }, 1000)
   }
 
   postClockEvent(isClockIn: boolean) {
