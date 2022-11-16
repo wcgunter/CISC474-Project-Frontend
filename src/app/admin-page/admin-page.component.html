@@ -1,4 +1,5 @@
 <div class="adminPage">
+    <h3 class="pageHeader">Administrator Panel</h3>
     <mat-card class="headerCard">
         <mat-card-title class="loginBanner">11 November - 26 November</mat-card-title>
         <mat-card-content>
@@ -21,12 +22,46 @@
                             <div class="column" style="width: 50%; padding-left: 10px; padding-right: 10px">
                                 <mat-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; width: 50%;">Team Member Activity</mat-card-title>
                             </div>
-                            <div class="column" style="width: 50%; padding-left: 10px; padding-right: 10px; text-align: right;">
-                                <button mat-raised-button>Edit</button>
-                            </div>
                         </div>
-                        <hr>
-                        <mat-card-content><h1>There will be a timesheet log here</h1></mat-card-content>
+
+                        <mat-expansion-panel hideToggle class="employeeSlideout">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                <div class="slideoutName">Lastname, Firstname</div>
+                                <div class="slideoutHours">XXh XXm clocked</div>
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <hr>
+
+                            <div style="padding-top: 5px; padding-bottom: 5px;">
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Status</div>
+                                    <div class="rightEmployeeStatus">Clocked In</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Last Clock In</div>
+                                    <div class="rightEmployeeStatus">DATETIME HERE</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Last Clock Out</div>
+                                    <div class="rightEmployeeStatus">DATETIME HERE</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Hours Worked</div>
+                                    <div class="rightEmployeeStatus">XXh XXm</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Wage</div>
+                                    <div class="rightEmployeeStatus">$XX/hr</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Total Pay</div>
+                                    <div class="rightEmployeeStatus">$XXXX.XX</div>
+                                </div>
+
+                            </div>
+                        </mat-expansion-panel>                         
+
                     </mat-card>
                 </div>
             </div>

@@ -16,10 +16,10 @@
 .headerCard {
 
     width: 90%;
-    height: 550px;
+    min-height: 550px;
     max-height: 50rem;
     position: absolute;
-    margin-top: 5%;
+    margin-top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
     border-radius: 20px;
@@ -68,5 +68,71 @@
     margin-top: 25px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     border-radius: 15px;
+    margin-bottom: 50px;
+
+}
+
+.employee-column {
+
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 18pt;
+}
+
+.pageHeader {
+
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    color: white;
+
+}
+
+.employeeSlideout {
+
+    margin-bottom: 10px;
+
+}
+
+.slideoutName {
+
+    width: 50%;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.slideoutHours {
+
+    width: 50%;
+    font-size: 18px;
+    text-align: right;
+
+}
+
+.leftEmployeeStatus {
+
+    width: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.rightEmployeeStatus {
+
+    width: 50%;
+    font-size: 18px;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
 }
