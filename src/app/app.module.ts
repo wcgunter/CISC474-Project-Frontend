@@ -14,6 +14,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityHttpInterceptor } from './services/security-http.interceptor';
 import { FormsModule } from '@angular/forms';
+import { ClockComponent } from './clock/clock.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     ToolbarComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,
