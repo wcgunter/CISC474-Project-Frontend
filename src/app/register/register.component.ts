@@ -13,11 +13,32 @@ export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
+    FirstName: new FormControl(''),
+    LastName: new FormControl(''),
+    Address: new FormControl(''),
+    JobTitle: new FormControl(''),
+    JobLevel: new FormControl(''),
+    HourlyPay: new FormControl(''),
   });
 
-  constructor() { }
+  @Input() error: string | null | undefined;
 
-  ngOnInit(): void {
-  }
+    constructor(private secService: SecurityService, private router: Router) { }
+
+    ngOnInit(): void {}
+
+    register () {
+      console.log("in register");
+        if (this.form.valid) {
+            console.log(this.form.value);
+            this.secService.validate().then((result)=>{
+                if (result){
+                    this.router.navigate(['home'])
+                } else{ }
+            }).catch(e=>{
+                console.error(e);
+            });
+        }
+    }
 
 }
