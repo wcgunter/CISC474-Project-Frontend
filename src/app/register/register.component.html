@@ -1,65 +1,3 @@
-<!-- <div class="fullscreenDiv">
-  <mat-card class="card">
-      <mat-card-title>Create New User</mat-card-title>
-      <mat-card-content>
-          <form [formGroup]="form">
-              <p>
-                  <mat-form-field class="textForm" appearance="fill">
-                      <mat-label>Username</mat-label>
-                      <input class="textInput" type="text" matInput placeholder="Username" formControlName="username" />
-                  </mat-form-field>
-              </p>
-              <p>
-                  <mat-form-field class="textForm" appearance="fill">
-                      <mat-label>Password</mat-label>
-                      <input type="password" matInput placeholder="Password" formControlName="password" />
-                  </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field class="textForm" appearance="fill">
-                    <mat-label>First Name</mat-label>
-                    <input type="text" matInput placeholder="First Name" formControlName="FirstName" />
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field class="textForm" appearance="fill">
-                    <mat-label>Last Name</mat-label>
-                    <input type="text" matInput placeholder="Last Name" formControlName="LastName" />
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field class="textForm" appearance="fill">
-                    <mat-label>Address</mat-label>
-                    <input type="text" matInput placeholder="Address" formControlName="Address" />
-                </mat-form-field>
-              </p>
-
-              <p>
-                <mat-form-field class="textForm" appearance="fill">
-                    <mat-label>Job Title</mat-label>
-                    <input type="text" matInput placeholder="Job Title" formControlName="JobTitle" />
-                </mat-form-field>
-              </p>
-
-              <p>
-                <mat-form-field class="textForm" appearance="fill">
-                    <mat-label>Job Level</mat-label>
-                    <input type="text" matInput placeholder="Job Level" formControlName="JobLevel" />
-                </mat-form-field>
-              </p>
-
-              <p>
-                <mat-form-field class="textForm" appearance="fill">
-                    <mat-label>Hourly Pay (in $)</mat-label>
-                    <input type="text" matInput placeholder="Hourly Pay" formControlName="HourlyPay" />
-                </mat-form-field>
-              </p>
-
-              <button class="registerButton" mat-raised-button color="primary" type="submit">Register</button>
-          </form>
-      </mat-card-content>
-  </mat-card>
-</div> -->
 <div class="fullscreenDiv">
   <mat-card class="registerCard">
     <mat-card-title>Create New User</mat-card-title>
@@ -117,7 +55,7 @@
           {{ error }}
         </p>
         <button class="registerButton" mat-raised-button color="primary"
-          type="submit">Register</button>
+          type="submit" (click)='register()'>Register</button>
       </form>
     </mat-card-content>
   </mat-card>

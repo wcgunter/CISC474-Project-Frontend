@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
         // TODO: generate a random clock id for new clock in event
         this.apiService.clockEvent(new Date(), "0", 'in').then((success) => {
             console.log(success);
+            window.alert("Clocked In Successfully.")
         })
     }
 
@@ -44,6 +45,7 @@ export class HomeComponent implements OnInit {
         // TODO: find a way to store clock id for a clock in, and pull that clock id when clocking out
         this.apiService.clockEvent(new Date(), "0", 'out').then((success) => {
             console.log(success);
+            window.alert("Clocked Out Successfully.")
         })
     }
 
@@ -55,4 +57,7 @@ export class HomeComponent implements OnInit {
         })
     }
 
+    createNewUser(){
+      this.router.navigate(['register'])
+    }
 }

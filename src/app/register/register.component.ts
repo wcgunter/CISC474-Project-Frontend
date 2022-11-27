@@ -28,10 +28,9 @@ export class RegisterComponent implements OnInit {
     ngOnInit(): void {}
 
     register () {
-      console.log("in register");
         if (this.form.valid) {
             console.log(this.form.value);
-            this.secService.validate().then((result)=>{
+            this.secService.register(this.form.value.username, this.form.value.password).then((result)=>{
                 if (result){
                     this.router.navigate(['home'])
                 } else{ }
