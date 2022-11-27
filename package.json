@@ -21,7 +21,11 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+<<<<<<< HEAD
     "node-modules": "^1.0.1",
+=======
+    "@mat-datetimepicker/core": "^10.0.10",
+>>>>>>> 52e561ebd15d2e3dfbd04103d803506957bbdb11
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
