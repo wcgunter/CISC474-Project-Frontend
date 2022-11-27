@@ -13,12 +13,13 @@ export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
-    FirstName: new FormControl(''),
-    LastName: new FormControl(''),
-    Address: new FormControl(''),
-    JobTitle: new FormControl(''),
-    JobLevel: new FormControl(''),
-    HourlyPay: new FormControl(''),
+    first_name: new FormControl(''),
+    last_name: new FormControl(''),
+    address: new FormControl(''),
+    job_title: new FormControl(''),
+    job_level: new FormControl(''),
+    pay_rate: new FormControl(''),
+    admin: new FormControl(false),
   });
 
   @Input() error: string | null | undefined;
@@ -29,10 +30,10 @@ export class RegisterComponent implements OnInit {
 
     register () {
         if (this.form.valid) {
-            console.log(this.form.value);
-            this.secService.register(this.form.value.username, this.form.value.password).then((result)=>{
+            this.secService.register(this.form.value.username, this.form.value.password, this.form.value.first_name, this.form.value.last_name, this.form.value.address, this.form.value.job_title, this.form.value.job_level, Number(this.form.value.pay_rate), (this.form.value.admin.toLowerCase() === 'true')).then((result)=>{
                 if (result){
-                    this.router.navigate(['home'])
+                    window.alert("New user created successfully.")
+                    this.router.navigate(['register'])
                 } else{ }
             }).catch(e=>{
                 console.error(e);

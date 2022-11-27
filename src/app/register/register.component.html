@@ -5,51 +5,56 @@
       <form [formGroup]="form" (ngSubmit)="register()">
         <mat-form-field class="textForm" appearance="fill">
           <mat-label>Username</mat-label>
-          <input class="textInput" type="text" matInput placeholder="Username"
+          <input class="textInput" type="text" matInput placeholder="username"
             formControlName="username" />
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input type="password" matInput placeholder="Password"
+          <input type="password" matInput placeholder="password"
             formControlName="password" />
         </mat-form-field>
 
         <mat-form-field class="textForm" appearance="fill">
           <mat-label>First Name</mat-label>
-          <input type="text" matInput placeholder="First Name"
-            formControlName="FirstName" />
+          <input type="text" matInput placeholder="first_name"
+            formControlName="first_name" />
         </mat-form-field>
 
         <mat-form-field class="textForm" appearance="fill">
           <mat-label>Last Name</mat-label>
-          <input type="text" matInput placeholder="Last Name"
-            formControlName="LastName" />
+          <input type="text" matInput placeholder="last_name"
+            formControlName="last_name" />
         </mat-form-field>
 
         <mat-form-field class="textForm" appearance="fill">
           <mat-label>Address</mat-label>
-          <input type="text" matInput placeholder="Address"
-            formControlName="Address" />
+          <input type="text" matInput placeholder="address"
+            formControlName="address" />
         </mat-form-field>
 
         <mat-form-field class="textForm" appearance="fill">
           <mat-label>Job Title</mat-label>
-          <input type="text" matInput placeholder="Job Title"
-            formControlName="JobTitle" />
+          <input type="text" matInput placeholder="job_title"
+            formControlName="job_title" />
         </mat-form-field>
 
         <mat-form-field class="textForm" appearance="fill">
           <mat-label>Job Level</mat-label>
-          <input type="text" matInput placeholder="Job Level"
-            formControlName="JobLevel" />
+          <input type="text" matInput placeholder="job_level"
+            formControlName="job_level" />
         </mat-form-field>
 
         <mat-form-field class="textForm" appearance="fill">
           <mat-label>Hourly Pay (in $)</mat-label>
-          <input type="text" matInput placeholder="Hourly Pay"
-            formControlName="HourlyPay" />
+          <input type="text" matInput placeholder="pay_rate"
+            formControlName="pay_rate" />
         </mat-form-field>
 
+        <mat-form-field class="textForm" appearance="fill">
+          <mat-label>Admin (true or false) </mat-label>
+          <input type="text" matInput placeholder="admin"
+            formControlName="admin" />
+        </mat-form-field>
 
         <p *ngIf="error" class="error">
           {{ error }}
