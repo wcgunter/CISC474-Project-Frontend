@@ -1,39 +1,96 @@
 <div class="fullscreenDiv flex-container-main">
-    <div class="flex-container-row">
-        <mat-card class="dateSelectorCard">
-            <p>Select a date range:</p>
-            <form [formGroup]="group">
-                <mat-form-field>
-                  <mat-placeholder>Start DateTime</mat-placeholder>
-                  <mat-datetimepicker-toggle
-                    [for]="datetimePicker"
-                    matSuffix
-                  ></mat-datetimepicker-toggle>
-                  <mat-datetimepicker
-                    #datetimePicker
-                    type="datetime"
-                    [openOnFocus]="true"
-                    [timeInterval]="5"
-                  >
-                  </mat-datetimepicker>
-                  <input
-                    matInput
-                    formControlName="inputbox"
-                    [matDatetimepicker]="datetimePicker"
-                    required
-                    autocomplete="false"
-                  />
-                </mat-form-field>
-              </form>
-        </mat-card>
-    </div>
-    <div class="flex-container-row">
-        <mat-card class="dateSelectorCard">
-        </mat-card>
-    </div>
-    <div class="flex-container-row">
-        <mat-card class="dateSelectorCard">
-            <button mat-raised-button (click)="test()">test</button>
-                </mat-card>
-    </div>
+  <div class="flex-container-row">
+      <mat-card class="dateSelectorCard">
+          <p class="dateTitle">Select a date range:</p>
+          <form class="item"[formGroup]="startTimeGroup">
+              <mat-form-field>
+                <mat-placeholder>Start Date & Time</mat-placeholder>
+                <mat-datetimepicker-toggle
+                  [for]="datetimePicker"
+                  matSuffix
+                ></mat-datetimepicker-toggle>
+                <mat-datetimepicker
+                  #datetimePicker
+                  type="datetime"
+                  [openOnFocus]="true"
+                  [timeInterval]="5"
+                >
+                </mat-datetimepicker>
+                <input
+                  matInput
+                  formControlName="startInputBox"
+                  [matDatetimepicker]="datetimePicker"
+                  required
+                  autocomplete="false"
+                />
+              </mat-form-field>
+            </form>
+            <form class="item" [formGroup]="endTimeGroup">
+              <mat-form-field>
+                <mat-placeholder>End Date & Time</mat-placeholder>
+                <mat-datetimepicker-toggle
+                  [for]="datetimePicker2"
+                  matSuffix
+                ></mat-datetimepicker-toggle>
+                <mat-datetimepicker
+                  #datetimePicker2
+                  type="datetime"
+                  [openOnFocus]="true"
+                  [timeInterval]="5"
+                >
+                </mat-datetimepicker>
+                <input
+                  matInput
+                  formControlName="endInputBox"
+                  [matDatetimepicker]="datetimePicker2"
+                  required
+                  autocomplete="false"
+                />
+              </mat-form-field>
+            </form>
+            <button mat-raised-button color="primary" (click)='searchAPI()'>Search</button>
+      </mat-card>
+  </div>
+  <div class="flex-container-row">
+      <mat-card class="tableCard">
+        <div class="mat-elevation-z8 fullScreenNoBackground" id="table">
+          <table mat-table [dataSource]="dataSource">
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <!-- Clock-In Column -->
+            <ng-container matColumnDef="clockIn">
+              <th mat-header-cell *matHeaderCellDef> Clock-In Time </th>
+              <td mat-cell *matCellDef="let element"> {{element.clockIn}} </td>
+            </ng-container>
+
+            <!-- Clock-Out Column -->
+            <ng-container matColumnDef="clockOut">
+              <th mat-header-cell *matHeaderCellDef> Clock-Out Time </th>
+              <td mat-cell *matCellDef="let element"> {{element.clockOut}} </td>
+            </ng-container>
+
+            <!-- Hours Worked Column -->
+            <ng-container matColumnDef="hoursWorked">
+              <th mat-header-cell *matHeaderCellDef> Hours Worked </th>
+              <td mat-cell *matCellDef="let element"> {{element.hoursWorked}} </td>
+            </ng-container>
+
+            <!-- Pay Column -->
+            <ng-container matColumnDef="pay">
+              <th mat-header-cell *matHeaderCellDef> Pay </th>
+              <td mat-cell *matCellDef="let element"> {{element.pay}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+          </mat-paginator>
+        </div>
+      </mat-card>
+  </div>
 </div>

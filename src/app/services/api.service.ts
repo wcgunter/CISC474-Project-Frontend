@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { serviceUrl } from '../config';
-import { ApiResponse, Log, PayResult } from '../types';
+import { ApiResponse, Log, LogView, PayResult } from '../types';
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +12,8 @@ export class ApiService {
     commands = {
         logs: '/api/employee/logs',
         clock: '/api/clock',
-        pay: '/api/employee/pay'
+        pay: '/api/employee/pay',
+        timesheet: '/api/employee/timesheet'
     };
 
     constructor(private http: HttpClient) { }
@@ -46,6 +47,24 @@ export class ApiService {
                     else {
                         console.log(v);
                         resolve(undefined);
+                    }
+                },
+                error: (e) => {
+                    reject(e)
+                }
+            })
+        })
+    }
+
+    getTimesheets(startDate: Date, endDate: Date): Promise<LogView[]> {
+        return new Promise((resolve, reject) => {
+            const req = this.http.get<ApiResponse>(this.url + this.commands.timesheet + `/${startDate.getTime()}/${endDate.getTime()}`);
+            req.subscribe({
+                next: (v) => {
+                    if (v.status == 'ok')
+                        resolve(v.data);
+                    else {
+                        console.log(v);
                     }
                 },
                 error: (e) => {
