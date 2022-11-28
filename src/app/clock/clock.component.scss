@@ -2,6 +2,8 @@ mat-card-title,
 mat-card-content {
     display: flex;
     justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
 .fullscreenDiv {
@@ -22,11 +24,15 @@ mat-card-content {
 }
 
 .clockButton {
-    flex: 1 1 auto;
+    flex: 0 auto;
     left: 100%;
+    top: 100%;
     transform: translate(-100%, 0);
     transform: translate(-100%, 150%);
-    align-items: center;
+    width: 100%;
+    padding: 0px 10px;
+    // justify-content: center;
+
 }
 
 //make title have 5% margin from top of card
@@ -38,7 +44,20 @@ mat-card-content {
 }
 
 .currentTime {
-    display: inline;
+    display: inline-flex;
     justify-content: center;
     font-size: 1rem;
+}
+
+.row{
+    margin: 0 auto;
+}
+
+.block {
+    display: inline-block;
+    padding: 2%;
+}
+
+#time {
+    font-size: 3rem;
 }

@@ -11,6 +11,7 @@ import {CookieService} from 'ngx-cookie-service';
 export class ClockComponent implements OnInit {
 
   dateTime: Date = new Date()
+  clocking: string = this.cookieService.get('clock-id') ? 'out' : 'in'
 
   constructor(private apiService: ApiService, private cookieService : CookieService) { }
 
@@ -20,12 +21,27 @@ export class ClockComponent implements OnInit {
     }, 1000)
   }
 
-  postClockEvent(isClockIn: boolean) {
-    isClockIn ? this.cookieService.set('clock-id', uuid()) : ''
+  postClockEvent() {
+    if (this.clocking == 'in'){
+      this.cookieService.set('clock-id', uuid())
+    }
     let clockID: string = this.cookieService.get('clock-id')
     if (clockID){
-      this.apiService.clockEvent(new Date(), clockID, isClockIn ? 'in' : 'yes').then(() => {
-        
+      this.apiService.clockEvent(this.dateTime, clockID, this.clocking).then((result) => {
+        if (result){
+          if (this.clocking == 'in') {
+            this.clocking ='out';
+          }else {
+            this.cookieService.delete('clock-id')
+            this.clocking = 'in';
+          }
+        }
+        else{ 
+          this.cookieService.delete('clock-id');
+        }
+      })
+      .catch(()=> {
+        (this.clocking == 'in') ? this.cookieService.delete('clock-id') : ''
       })
     }
   }
