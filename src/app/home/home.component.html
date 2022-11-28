@@ -1,23 +1,36 @@
-<button class='btn btn-dark' (click)='getLogs()'>Click Me to get logs</button>
+<div class="fullscreenDiv">
+  <mat-card class="homeCard">
+    <mat-card-header>
+      <mat-card-title>Payroll System</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-button (click)='getLogs()'>TIMESHEET</button>
+      <button mat-button (click)='clockIn()'>CLOCK IN</button>
+      <button mat-button (click)='clockOut()'>CLOCK OUT</button>
+      <button mat-button (click)='createNewUser()'>CREATE NEW USER</button>
+    </mat-card-actions>
 
-<button class='btn btn-dark' (click)='clockIn()'>Click Me to clock in right now</button>
-<button class='btn btn-dark' (click)='clockOut()'>Click Me to clock out right now</button>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="pickerStart" [(ngModel)]="startDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+    </p>
 
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="pickerEnd" [(ngModel)]="endDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
+    </p>
 
-<mat-form-field appearance="fill">
-    <mat-label>Start Date</mat-label>
-    <input matInput [matDatepicker]="pickerStart" [(ngModel)]="startDate">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
-    <mat-datepicker #pickerStart></mat-datepicker>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Start Date</mat-label>
-    <input matInput [matDatepicker]="pickerEnd" [(ngModel)]="endDate">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
-    <mat-datepicker #pickerEnd></mat-datepicker>
-  </mat-form-field>
-
-  <button class='btn btn-dark' (click)='pay()'>Click Me to show pay</button>
+      <button mat-raised-button color="primary" style="margin-right:5px;"
+        type="submit" (click)='pay()'>SHOW PAY</button>
+  </mat-card>
+</div>

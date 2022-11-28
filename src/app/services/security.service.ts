@@ -11,7 +11,7 @@ export class SecurityService {
     commands = {
         login: '/security/token',
         register: '/security/register',
-        validate: '/security/validate'
+        validate: '/security/validate/admin'
     };
     get username(): string {
         const un = localStorage.getItem('user_name');
@@ -82,9 +82,9 @@ export class SecurityService {
         })
     }
 
-    register(un: string, pass: string): Promise<boolean> {
+    register(un: string, pass: string, fn: string, ln: string, add: string, job_title: string, job_level: string, pay_rate: number, admin: boolean): Promise<boolean> {
         return new Promise((resolve, reject) => {
-            const req = this.http.post<ApiResponse>(this.url + this.commands.register, { username: un, password: pass });
+            const req = this.http.post<ApiResponse>(this.url + this.commands.register, { username: un, password: pass, first_name: fn, last_name: ln, address: add, job_title: job_title, job_level: job_level, pay_rate: pay_rate, admin: admin });
             req.subscribe({
                 next: (v: ApiResponse) => {
                     if (v.status == 'ok') {
@@ -98,7 +98,6 @@ export class SecurityService {
                     console.error(e)
                 }
             });
-
         });
     }
 

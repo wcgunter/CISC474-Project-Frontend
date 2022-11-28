@@ -1,0 +1,60 @@
+.mat-form-field {
+  width: 100%;
+  min-width: 500px;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-card-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 5rem;
+}
+
+.error {
+  padding: 16px;
+  width: 200px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.registerCard {
+  width: 700px;
+  height: 900px;
+  position: absolute;
+  left: 50%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  transform: translate(-50%, 0);
+}
+
+.fullscreenDiv {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#e66465, #9198e5);
+  position: relative;
+}
+
+.registerButton {
+  flex: 1 1 auto;
+  left: 100%;
+  transform: translate(-100%, 0);
+  transform: translate(-100%, 150%);
+}
+
+:host ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 12px;
+  outline: auto #a6a6a6;
+}
+:host ::ng-deep .mat-form-field-underline {
+  display: none;
+}

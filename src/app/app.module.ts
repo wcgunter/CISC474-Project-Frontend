@@ -15,6 +15,7 @@ import { TimesheetViewerComponent } from './timesheet-viewer/timesheet-viewer.co
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityHttpInterceptor } from './services/security-http.interceptor';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     ToolbarComponent,
     LoginFormComponent,
-    TimesheetViewerComponent
+    TimesheetViewerComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
