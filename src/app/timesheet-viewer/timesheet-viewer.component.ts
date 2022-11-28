@@ -99,6 +99,7 @@ export class TimesheetViewerComponent implements AfterViewInit {
     var endTime = new Date(this.getEndTime);
     this.apiService.getTimesheets(startTime, endTime).then((timesheets) => {
       this.ELEMENT_DATA.splice(0, this.ELEMENT_DATA.length, ...timesheets);
+      this.ELEMENT_DATA.shift();
     })
     this.dataSource.data = this.ELEMENT_DATA;
   } 

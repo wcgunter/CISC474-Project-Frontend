@@ -13,7 +13,7 @@ export class ApiService {
         logs: '/api/employee/logs',
         clock: '/api/clock',
         pay: '/api/employee/pay',
-        timesheet: 'api/employee/timesheet/'
+        timesheet: '/api/employee/timesheet'
     };
 
     constructor(private http: HttpClient) { }
