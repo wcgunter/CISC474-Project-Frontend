@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
         if (this.form.valid) {
             this.secService.register(this.form.value.username, this.form.value.password, this.form.value.first_name, this.form.value.last_name, this.form.value.address, this.form.value.job_title, this.form.value.job_level, Number(this.form.value.pay_rate), (this.form.value.admin === 'true')).then((result)=>{
                 if (result){
-                    window.alert("New user created successfully.")
+                    window.alert("New user created successfully!")
                     this.router.navigate(['home'])
                 } else{ }
             }).catch(e=>{
