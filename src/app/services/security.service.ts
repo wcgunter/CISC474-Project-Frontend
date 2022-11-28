@@ -11,7 +11,8 @@ export class SecurityService {
     commands = {
         login: '/security/token',
         register: '/security/register',
-        validate: '/security/validate/admin'
+        validateAdmin: '/security/validate/admin',
+        validate: '/security/validate/'
     };
     get username(): string {
         const un = localStorage.getItem('user_name');
@@ -62,6 +63,24 @@ export class SecurityService {
     logout() {
         this.token = '';
         this.username = '';
+    }
+
+    validateAdmin(): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            if (!this.loggedIn) return resolve(false);
+            const req = this.http.get<ApiResponse>(this.url + this.commands.validateAdmin);
+            req.subscribe({
+                next: (v) => {
+                    const ok = v.status == 'ok';
+                    if (!ok) this.token = '';
+                    resolve(ok);
+                },
+                error: (e) => {
+                    this.token = '';
+                    reject(e)
+                }
+            })
+        })
     }
 
     validate(): Promise<boolean> {

@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
 
     constructor(private secService: SecurityService, private router: Router) { }
 
-    ngOnInit(): void {}
+    ngOnInit(): void { }
 
     register () {
         if (this.form.valid) {

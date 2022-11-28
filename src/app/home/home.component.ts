@@ -18,7 +18,9 @@ export class HomeComponent implements OnInit {
   constructor(public sharedSvc: TestService, private secService: SecurityService, private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
-    if (!this.secService.loggedIn) this.router.navigate(['/login']);
+    this.secService.validate().then((result)=>{
+      if (!result) this.router.navigate(['/login']);
+    });
   }
 
   onClick() {
@@ -58,7 +60,7 @@ export class HomeComponent implements OnInit {
   }
 
   createNewUser() {
-    this.secService.validate().then((result) => {
+    this.secService.validateAdmin().then((result) => {
       if (result) {
         this.router.navigate(['register'])
       } else { window.alert("You don't have access to this page.") }
