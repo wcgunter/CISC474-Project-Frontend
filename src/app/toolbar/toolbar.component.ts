@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,9 +9,14 @@ import { MatMenuTrigger } from '@angular/material/menu';
 })
 export class ToolbarComponent implements OnInit {
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  navigate(page: string){
+    this.router.navigate([`/${page}`]);
+
   }
 
 }
