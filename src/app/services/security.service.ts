@@ -84,7 +84,7 @@ export class SecurityService {
 
     register(un: string, pass: string, fn: string, ln: string, add: string, job_title: string, job_level: string, pay_rate: number, admin: boolean): Promise<boolean> {
         return new Promise((resolve, reject) => {
-            const req = this.http.post<ApiResponse>(this.url + this.commands.register, { username: un, password: pass, first_name: fn, last_name: ln, address: add, job_title: job_title, job_level: job_level, pay_rate: pay_rate, admin: admin });
+            const req = this.http.post<ApiResponse>(this.url + this.commands.register, { username: un, password: pass, first_name: fn, last_name: ln, address: add, job_title: job_title, job_level: job_level, pay_rate: pay_rate, is_admin: admin });
             req.subscribe({
                 next: (v: ApiResponse) => {
                     if (v.status == 'ok') {
