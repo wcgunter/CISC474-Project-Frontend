@@ -16,6 +16,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityHttpInterceptor } from './services/security-http.interceptor';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { ClockComponent } from './clock/clock.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { RegisterComponent } from './register/register.component';
     ToolbarComponent,
     LoginFormComponent,
     TimesheetViewerComponent,
-    RegisterComponent
+    RegisterComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,

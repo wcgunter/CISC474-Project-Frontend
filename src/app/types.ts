@@ -10,6 +10,14 @@ export interface Log {
     clock_id: string;
 }
 
+export interface LogView {
+    position: number;
+    clockIn: string;
+    clockOut: string;
+    hoursWorked: number;
+    pay: number;
+}
+
 export interface PayResult {
     hours_worked: number;
     pay: number;

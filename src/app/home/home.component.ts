@@ -18,7 +18,9 @@ export class HomeComponent implements OnInit {
   constructor(public sharedSvc: TestService, private secService: SecurityService, private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
-    if (!this.secService.loggedIn) this.router.navigate(['/login']);
+    this.secService.validate().then((result)=>{
+      if (!result) this.router.navigate(['/login']);
+    });
   }
 
   onClick() {
@@ -28,25 +30,12 @@ export class HomeComponent implements OnInit {
   getLogs() {
     this.apiService.getLogs().then((logs) => {
       console.log(logs);
-    })
+    });
+    this.router.navigate([`/timesheet-viewer`]);
   }
 
-  // TEMPORARY FUNCTION --> CLOCKS IN CLOCK_ID 0
-  clockIn() {
-    // TODO: generate a random clock id for new clock in event
-    this.apiService.clockEvent(new Date(), "0", 'in').then((success) => {
-      console.log(success);
-      window.alert("Clocked In Successfully.")
-    })
-  }
-
-  // TEMPORARY FUNCTION --> CLOCKS OUT CLOCK_ID 0
-  clockOut() {
-    // TODO: find a way to store clock id for a clock in, and pull that clock id when clocking out
-    this.apiService.clockEvent(new Date(), "0", 'out').then((success) => {
-      console.log(success);
-      window.alert("Clocked Out Successfully.")
-    })
+  clock() {
+    this.router.navigate([`/clock`]);
   }
 
   // TEMPORARY FUNCTION
@@ -58,7 +47,7 @@ export class HomeComponent implements OnInit {
   }
 
   createNewUser() {
-    this.secService.validate().then((result) => {
+    this.secService.validateAdmin().then((result) => {
       if (result) {
         this.router.navigate(['register'])
       } else { window.alert("You don't have access to this page.") }

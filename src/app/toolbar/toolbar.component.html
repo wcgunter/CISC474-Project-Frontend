@@ -3,25 +3,21 @@
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #mainMenu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="navigate('home')">
             <mat-icon>home</mat-icon>
             <span>Home</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="navigate('clock')">
             <mat-icon>punch_clock</mat-icon>
             <span>Clock In/Out</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="navigate('timesheet-viewer')">
             <mat-icon>work_history</mat-icon>
             <span>Timesheet History</span>
         </button>
-        <button mat-menu-item>
-            <mat-icon>person_search</mat-icon>
-            <span>Employee Search</span>
-        </button>
-        <button mat-menu-item>
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
         </button>
     </mat-menu>
     <span class="toolbar-title">PocketWatch</span>
@@ -41,10 +37,6 @@
         <button mat-menu-item>
             <mat-icon>manage_accounts</mat-icon>
             <span>Profile Options</span>
-        </button>
-        <button mat-menu-item>
-            <mat-icon>logout</mat-icon>
-            <span>Logout</span>
         </button>
     </mat-menu>
 </mat-toolbar>
