@@ -15,7 +15,12 @@ import { TimesheetViewerComponent } from './timesheet-viewer/timesheet-viewer.co
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SecurityHttpInterceptor } from './services/security-http.interceptor';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { RegisterComponent } from './register/register.component';
+=======
+import { ClockComponent } from './clock/clock.component';
+
+>>>>>>> tommy-clock-in-out
 
 @NgModule({
   declarations: [
@@ -24,8 +29,12 @@ import { RegisterComponent } from './register/register.component';
     AboutComponent,
     ToolbarComponent,
     LoginFormComponent,
+<<<<<<< HEAD
     TimesheetViewerComponent,
     RegisterComponent
+=======
+    ClockComponent
+>>>>>>> tommy-clock-in-out
   ],
   imports: [
     BrowserModule,
