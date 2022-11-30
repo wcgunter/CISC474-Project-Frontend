@@ -18,9 +18,7 @@ import { TestService } from '../test.service';
 
 export class TimesheetViewerComponent implements AfterViewInit {
   //Table variables & functions
-  ELEMENT_DATA: LogView[] = [
-    {position: 1, clockIn: '1/1/2020 8:00 AM', clockOut: '1/1/2020 5:00 PM', hoursWorked: 8, pay: 8},
-  ];
+  ELEMENT_DATA: LogView[] = [];
   displayedColumns: string[] = ['position', 'clockIn', 'clockOut', 'hoursWorked', 'pay'];
   dataSource = new MatTableDataSource<LogView>(this.ELEMENT_DATA);
 
