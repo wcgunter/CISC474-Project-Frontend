@@ -26,6 +26,9 @@ export class TimesheetViewerComponent implements AfterViewInit {
   paginator!: MatPaginator;
 
   ngAfterViewInit() {
+    this.secService.validate().then((result)=>{
+      if (!result) this.router.navigate(['/login']);
+    });
     this.dataSource.paginator = this.paginator;
   }
 

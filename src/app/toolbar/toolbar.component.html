@@ -15,6 +15,10 @@
             <mat-icon>work_history</mat-icon>
             <span>Timesheet History</span>
         </button>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
     </mat-menu>
     <span class="toolbarTitle">Payroll 24/7</span>
     <span class="spacer"></span>
@@ -33,10 +37,6 @@
         <button mat-menu-item>
             <mat-icon>manage_accounts</mat-icon>
             <span>Profile Options</span>
-        </button>
-        <button mat-menu-item>
-            <mat-icon>logout</mat-icon>
-            <span>Logout</span>
         </button>
     </mat-menu>
 </mat-toolbar>
