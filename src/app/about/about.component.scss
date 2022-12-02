@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     background: hsl(0, 0%, 20%);
+    overflow-y: auto;
   }
 
 .welcome {

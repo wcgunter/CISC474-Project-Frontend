@@ -45,7 +45,7 @@ mat-card-content {
     height: 100%;
     background: linear-gradient(#e66465, #9198e5);
     position: relative;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .loginButton {

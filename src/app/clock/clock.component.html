@@ -4,7 +4,7 @@
         <mat-card-content (ngSubmit) = 'postClockEvent()' class="row" >
             <div class="block">TimeZone: {{dateTime | date:'zzzz'}}</div>
             <div class="block">Date: {{dateTime | date:'longDate'}} </div>
-            <div id='time'>{{dateTime | date: 'shortTime'}} </div>
+            <div class="block" id='time'>{{dateTime | date: 'shortTime'}} </div>
             <button class="clockButton" mat-raised-button color="primary" (click)="postClockEvent()">Clock {{clocking}}</button>
         </mat-card-content>
     </mat-card>
