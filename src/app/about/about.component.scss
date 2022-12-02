@@ -5,5 +5,94 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    background: hsl(0, 0%, 20%);
     overflow-y: auto;
   }
+
+.welcome {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+    font-size: clamp(2rem, 15vmin, 4rem);
+    white-space: normal;
+    text-align: center;
+    color: white;
+}
+
+.future {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+    font-size: clamp(3rem, 25vmin, 8rem);
+    line-height: normal;
+    white-space: normal;
+    text-align: center;
+    --bg-size: 400%;
+    --color-one: hsl(15 90% 55%);
+    --color-two: hsl(40 95% 55%);
+    background: linear-gradient(
+                90deg,
+                var(--color-one),
+                var(--color-two),
+                var(--color-one)
+              ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: move-bg 8s infinite linear;
+}
+
+@keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+
+.payroll {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+    font-size: clamp(2rem, 15vmin, 4rem);
+    white-space: normal;
+    text-align: center;
+    color: white;
+    line-height: normal;
+}
+
+.subtext {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    font-size: clamp(1rem, 3vmin, 4rem);
+    white-space: normal;
+    text-align: center;
+    color: white;
+    line-height: normal;
+}
+
+.getStartedButton {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15rem;
+    font-size: clamp(1rem, 3vmin, 4rem);
+    white-space: normal;
+    text-align: center;
+    color: white;
+    line-height: normal;
+    background-color: hsl(40 95% 55%);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
