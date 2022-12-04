@@ -1,21 +1,21 @@
 <div class="adminPage">
     <h3 class="pageHeader">Administrator Panel</h3>
     <mat-card class="headerCard">
-        <mat-card-title class="loginBanner">11 November - 26 November</mat-card-title>
+        <mat-card-title class="loginBanner">For the last seven days:</mat-card-title>
         <mat-card-content>
             <div>
                 <div class="row">
                     <div class="column">
                         <p class="statisticHeader">Team Hours Worked</p>
-                        <h1 style="font-weight: bold">99 hrs</h1>
+                        <h1 style="font-weight: bold">{{getTotalStaffHours()}} hrs</h1>
                     </div>
                     <div class="column">
                         <p class="statisticHeader">Outgoing Pay</p>
-                        <h1 style="font-weight: bold">$12345.67</h1>
+                        <h1 style="font-weight: bold">${{getTotalStaffPay()}}</h1>
                     </div>
                     <div class="column">
                         <p class="statisticHeader">Team Members</p>
-                        <h1 style="font-weight: bold">COUNT</h1>
+                        <h1 style="font-weight: bold">{{getTotalStaffSize()}}</h1>
                     </div>
                     <mat-card class="spreadsheet">
                         <div class="row">
@@ -24,11 +24,11 @@
                             </div>
                         </div>
 
-                        <mat-expansion-panel hideToggle class="employeeSlideout">
+                        <mat-expansion-panel hideToggle class="employeeSlideout" *ngFor="let employee of employees">
                             <mat-expansion-panel-header>
                               <mat-panel-title>
-                                <div class="slideoutName">Lastname, Firstname</div>
-                                <div class="slideoutHours">XXh XXm clocked</div>
+                                <div class="slideoutName">{{employee.last_name}}, {{employee.first_name}}</div>
+                                <div class="slideoutHours">{{getEmployeeHours(employee)}}h accrued</div>
                               </mat-panel-title>
                             </mat-expansion-panel-header>
                             <hr>
@@ -36,27 +36,27 @@
                             <div style="padding-top: 5px; padding-bottom: 5px;">
                                 <div class="row">
                                     <div class="leftEmployeeStatus">Status</div>
-                                    <div class="rightEmployeeStatus">Clocked In</div>
+                                    <div class="rightEmployeeStatus">{{getClockedInStatus(employee)}}</div>
                                 </div>
                                 <div class="row">
                                     <div class="leftEmployeeStatus">Last Clock In</div>
-                                    <div class="rightEmployeeStatus">DATETIME HERE</div>
+                                    <div class="rightEmployeeStatus">{{getLastClockInEvent(employee)}}</div>
                                 </div>
                                 <div class="row">
                                     <div class="leftEmployeeStatus">Last Clock Out</div>
-                                    <div class="rightEmployeeStatus">DATETIME HERE</div>
+                                    <div class="rightEmployeeStatus">{{getLastClockOutEvent(employee)}}</div>
                                 </div>
                                 <div class="row">
                                     <div class="leftEmployeeStatus">Hours Worked</div>
-                                    <div class="rightEmployeeStatus">XXh XXm</div>
+                                    <div class="rightEmployeeStatus">{{getEmployeeHours(employee)}}</div>
                                 </div>
                                 <div class="row">
                                     <div class="leftEmployeeStatus">Wage</div>
-                                    <div class="rightEmployeeStatus">$XX/hr</div>
+                                    <div class="rightEmployeeStatus">{{getEmployeeWageString(employee)}}</div>
                                 </div>
                                 <div class="row">
                                     <div class="leftEmployeeStatus">Total Pay</div>
-                                    <div class="rightEmployeeStatus">$XXXX.XX</div>
+                                    <div class="rightEmployeeStatus">${{getEmployeePay(employee)}}</div>
                                 </div>
 
                             </div>

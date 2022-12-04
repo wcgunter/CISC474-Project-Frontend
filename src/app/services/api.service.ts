@@ -12,7 +12,8 @@ export class ApiService {
     commands = {
         logs: '/api/employee/logs',
         clock: '/api/clock',
-        pay: '/api/employee/pay'
+        pay: '/api/employee/pay',
+        employees: '/api/employees'
     };
 
     constructor(private http: HttpClient) { }
@@ -39,6 +40,26 @@ export class ApiService {
     getPay(startDate: Date, endDate: Date): Promise<PayResult | undefined> {
         return new Promise((resolve, reject) => {
             const req = this.http.get<ApiResponse>(this.url + this.commands.pay + `/${startDate.getTime()}/${endDate.getTime()}`);
+            req.subscribe({
+                next: (v) => {
+                    if (v.status == 'ok')
+                        resolve(v.data);
+                    else {
+                        console.log(v);
+                        resolve(undefined);
+                    }
+                },
+                error: (e) => {
+                    reject(e)
+                }
+            })
+        })
+    }
+
+    //
+    getEmployees(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            const req = this.http.get<ApiResponse>(this.url + this.commands.employees);
             req.subscribe({
                 next: (v) => {
                     if (v.status == 'ok')
