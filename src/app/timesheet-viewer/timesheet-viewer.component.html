@@ -53,7 +53,8 @@
   </div>
   <div class="flex-container-row">
       <mat-card class="tableCard">
-        <div class="mat-elevation-z8 fullScreenNoBackground" id="table">
+        <div class="flex-container-main fullScreenNoBackground">
+        <div class="mat-elevation-z8" id="table">
           <table mat-table [dataSource]="dataSource">
             <!-- Position Column -->
             <ng-container matColumnDef="position">
@@ -91,6 +92,7 @@
           <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
           </mat-paginator>
         </div>
+      </div>
       </mat-card>
   </div>
 </div>
