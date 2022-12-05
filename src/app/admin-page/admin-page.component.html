@@ -1,0 +1,73 @@
+<div class="adminPage">
+    <h3 class="pageHeader">Administrator Panel</h3>
+    <mat-card class="headerCard">
+        <mat-card-title class="loginBanner">For the last seven days:</mat-card-title>
+        <mat-card-content>
+            <div>
+                <div class="row">
+                    <div class="column">
+                        <p class="statisticHeader">Team Hours Worked</p>
+                        <h1 style="font-weight: bold">{{getTotalStaffHours()}} hrs</h1>
+                    </div>
+                    <div class="column">
+                        <p class="statisticHeader">Outgoing Pay</p>
+                        <h1 style="font-weight: bold">${{getTotalStaffPay()}}</h1>
+                    </div>
+                    <div class="column">
+                        <p class="statisticHeader">Team Members</p>
+                        <h1 style="font-weight: bold">{{getTotalStaffSize()}}</h1>
+                    </div>
+                    <mat-card class="spreadsheet">
+                        <div class="row">
+                            <div class="column" style="width: 50%; padding-left: 10px; padding-right: 10px">
+                                <mat-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; width: 50%;">Team Member Activity</mat-card-title>
+                            </div>
+                        </div>
+
+                        <mat-expansion-panel hideToggle class="employeeSlideout" *ngFor="let employee of employees">
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                <div class="slideoutName">{{employee.last_name}}, {{employee.first_name}}</div>
+                                <div class="slideoutHours">{{getEmployeeHours(employee)}}h accrued</div>
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <hr>
+
+                            <div style="padding-top: 5px; padding-bottom: 5px;">
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Status</div>
+                                    <div class="rightEmployeeStatus">{{getClockedInStatus(employee)}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Last Clock In</div>
+                                    <div class="rightEmployeeStatus">{{getLastClockInEvent(employee)}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Last Clock Out</div>
+                                    <div class="rightEmployeeStatus">{{getLastClockOutEvent(employee)}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Hours Worked</div>
+                                    <div class="rightEmployeeStatus">{{getEmployeeHours(employee)}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Wage</div>
+                                    <div class="rightEmployeeStatus">{{getEmployeeWageString(employee)}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="leftEmployeeStatus">Total Pay</div>
+                                    <div class="rightEmployeeStatus">${{getEmployeePay(employee)}}</div>
+                                </div>
+
+                            </div>
+                        </mat-expansion-panel>                         
+
+                    </mat-card>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
