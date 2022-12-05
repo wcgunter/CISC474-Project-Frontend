@@ -32,8 +32,8 @@
     white-space: normal;
     text-align: center;
     --bg-size: 400%;
-    --color-one: hsl(15 90% 55%);
-    --color-two: hsl(40 95% 55%);
+    --color-one: #e66465;
+    --color-two: #9198e5;
     background: linear-gradient(
                 90deg,
                 var(--color-one),
@@ -89,7 +89,6 @@
     text-align: center;
     color: white;
     line-height: normal;
-    background-color: hsl(40 95% 55%);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;

@@ -14,10 +14,30 @@ export class ApiService {
         clock: '/api/clock',
         pay: '/api/employee/pay',
         timesheet: '/api/employee/timesheet',
-        employees: '/api/employees'
+        employees: '/api/employees',
+        firstName: '/api/employee/about/firstName'
     };
 
     constructor(private http: HttpClient) { }
+
+    getFirstName(): Promise<string | undefined> {
+        return new Promise((resolve, reject) => {
+            const req = this.http.get<ApiResponse>(this.url + this.commands.firstName);
+            req.subscribe({
+                next: (v) => {
+                    if (v.status == 'ok')
+                        resolve(v.data);
+                    else {
+                        console.log(v);
+                        resolve(undefined);
+                    }
+                },
+                error: (e) => {
+                    reject(e)
+                }
+            })
+        })
+    }
 
     getLogs(): Promise<Log[] | undefined> {
         return new Promise((resolve, reject) => {

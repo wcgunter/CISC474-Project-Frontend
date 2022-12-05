@@ -7,7 +7,7 @@
 
 .homeCard {
   width: 540px;
-  height: 400px;
+  height: 550px;
   position: absolute;
   left: 50%;
   margin-top: 2%;
@@ -17,6 +17,41 @@
 }
 
 .mat-button{
-  background-color: #ADD8E6;
+  margin: 2%;
+  width: 440px;
+  height: 95px;
+  background-color: #3f51b5;
+  color: white;
+  font-size: large;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 5px;
+  margin-top: -3px;
+  font-size: 500;
+}
+
+.subtext {
+  margin-top: -5px; 
+  margin-bottom: -5px; 
+  font-size: small;
+}
+
+.notLoaded {
+  //transition for first name fade in
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.loaded {
+  //transition for first name fade in
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
