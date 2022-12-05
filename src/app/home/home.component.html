@@ -1,44 +1,27 @@
 <div class="fullscreenDiv">
   <mat-card class="homeCard">
-    <mat-card-header>
-      <mat-card-title>Payroll System</mat-card-title>
-    </mat-card-header>
-    <mat-card-actions>
+    <h1 class={{className}}>Welcome home, {{ userFirstName }}.</h1>
+    <div class="flex-container">
       <button mat-button (click)='getLogs()'>
-        <mat-icon>work_history</mat-icon>
+        <mat-icon class="icon">work_history</mat-icon>
         TIMESHEET
+        <p class="subtext">View your hours & pay</p>
       </button>
       <button mat-button (click)='clock()'>
-        <mat-icon>schedule</mat-icon>
+        <mat-icon class="icon">schedule</mat-icon>
         CLOCK IN / OUT
+        <p class="subtext">Start or end your shift</p>
       </button>
       <button mat-button (click)='createNewUser()'>
-        <mat-icon>person_add</mat-icon>
+        <mat-icon class="icon">person_add</mat-icon>
         CREATE NEW USER
+        <p class="subtext">Add new employee to the system</p>
       </button>
-    </mat-card-actions>
-
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>Start Date</mat-label>
-        <input matInput [matDatepicker]="pickerStart" [(ngModel)]="startDate">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
-        <mat-datepicker #pickerStart></mat-datepicker>
-      </mat-form-field>
-    </p>
-
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>Start Date</mat-label>
-        <input matInput [matDatepicker]="pickerEnd" [(ngModel)]="endDate">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
-        <mat-datepicker #pickerEnd></mat-datepicker>
-      </mat-form-field>
-    </p>
-
-      <button mat-raised-button color="primary" style="margin-right:5px;"
-        type="submit" (click)='pay()'>SHOW PAY</button>
+      <button mat-button (click)='manageEmployees()'>
+        <mat-icon class="icon">groups</mat-icon>
+        MANAGE MY EMPLOYEES
+        <p class="subtext">View your manager report</p>
+      </button>
+  </div>
   </mat-card>
 </div>
