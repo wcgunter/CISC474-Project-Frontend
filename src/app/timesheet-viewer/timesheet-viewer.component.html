@@ -3,7 +3,7 @@
       <mat-card class="dateSelectorCard">
           <p class="dateTitle">Select a date range:</p>
           <form class="item"[formGroup]="startTimeGroup">
-              <mat-form-field>
+              <mat-form-field class="margin-top">
                 <mat-placeholder>Start Date & Time</mat-placeholder>
                 <mat-datetimepicker-toggle
                   [for]="datetimePicker"
@@ -26,7 +26,7 @@
               </mat-form-field>
             </form>
             <form class="item" [formGroup]="endTimeGroup">
-              <mat-form-field>
+              <mat-form-field class="margin-top">
                 <mat-placeholder>End Date & Time</mat-placeholder>
                 <mat-datetimepicker-toggle
                   [for]="datetimePicker2"
@@ -48,7 +48,10 @@
                 />
               </mat-form-field>
             </form>
-            <button mat-raised-button color="primary" (click)='searchAPI()'>Search</button>
+            <button mat-raised-button color="primary" (click)='searchAPI()'>
+              <mat-icon style="margin-right: 5px;">search</mat-icon>
+              Search
+            </button>
       </mat-card>
   </div>
   <div class="flex-container-row">
