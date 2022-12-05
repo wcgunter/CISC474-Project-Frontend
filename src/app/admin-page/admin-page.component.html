@@ -1,7 +1,6 @@
 <div class="adminPage">
     <h3 class="pageHeader">Administrator Panel</h3>
     <mat-card class="headerCard">
-        <mat-card-title class="loginBanner">For the last seven days:</mat-card-title>
         <mat-card-content>
             <div>
                 <div class="row">
@@ -19,16 +18,16 @@
                     </div>
                     <mat-card class="spreadsheet">
                         <div class="row">
-                            <div class="column" style="width: 50%; padding-left: 10px; padding-right: 10px">
-                                <mat-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; width: 50%;">Team Member Activity</mat-card-title>
+                            <div class="column" style="padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; width: 100%">
+                                <mat-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-weight: bold">Team Member Activity</mat-card-title>
                             </div>
                         </div>
 
-                        <mat-expansion-panel hideToggle class="employeeSlideout" *ngFor="let employee of employees">
+                        <mat-expansion-panel class="employeeSlideout" *ngFor="let employee of employees">
                             <mat-expansion-panel-header>
                               <mat-panel-title>
-                                <div class="slideoutName">{{employee.last_name}}, {{employee.first_name}}</div>
-                                <div class="slideoutHours">{{getEmployeeHours(employee)}}h accrued</div>
+                                    <div class="slideoutName">{{employee.last_name}}, {{employee.first_name}}</div>
+                                    <div class="slideoutHours">{{getEmployeeHours(employee)}}h accrued</div>
                               </mat-panel-title>
                             </mat-expansion-panel-header>
                             <hr>

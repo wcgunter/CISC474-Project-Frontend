@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { SecurityService } from '../services/security.service';
 
 @Component({
   selector: 'app-admin-page',
@@ -11,9 +13,16 @@ export class AdminPageComponent implements OnInit {
   totalHoursWorked = 0;
   employees: any = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private secService: SecurityService, private router: Router) { }
 
   ngOnInit(): void {
+    this.secService.validateAdmin().then((result) => {
+      if (!result) {
+        this.router.navigate(['home']);
+      }
+    }).catch(e => {
+      console.error(e);
+    });
     this.getData();
   }
 

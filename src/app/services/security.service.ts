@@ -72,11 +72,9 @@ export class SecurityService {
             req.subscribe({
                 next: (v) => {
                     const ok = v.status == 'ok';
-                    if (!ok) this.token = '';
                     resolve(ok);
                 },
                 error: (e) => {
-                    this.token = '';
                     reject(e)
                 }
             })

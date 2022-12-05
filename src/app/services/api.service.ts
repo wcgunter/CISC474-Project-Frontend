@@ -76,25 +76,25 @@ export class ApiService {
         })
     }
 
-        //
-        getEmployees(): Promise<any> {
-            return new Promise((resolve, reject) => {
-                const req = this.http.get<ApiResponse>(this.url + this.commands.employees);
-                req.subscribe({
-                    next: (v) => {
-                        if (v.status == 'ok')
-                            resolve(v.data);
-                        else {
-                            console.log(v);
-                            resolve(undefined);
-                        }
-                    },
-                    error: (e) => {
-                        reject(e)
+    //
+    getEmployees(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            const req = this.http.get<ApiResponse>(this.url + this.commands.employees);
+            req.subscribe({
+                next: (v) => {
+                    if (v.status == 'ok')
+                        resolve(v.data);
+                    else {
+                        console.log(v);
+                        resolve(undefined);
                     }
-                })
+                },
+                error: (e) => {
+                    reject(e)
+                }
             })
-        }
+        })
+    }
 
 
     // calls post clock endpoint with an in our out clock event - returns promise<boolean> true if successful, false if failed
