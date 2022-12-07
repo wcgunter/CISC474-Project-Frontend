@@ -5,7 +5,10 @@
             <div class="block">TimeZone: {{dateTime | date:'zzzz'}}</div>
             <div class="block">Date: {{dateTime | date:'longDate'}} </div>
             <div class="block" id='time'>{{dateTime | date: 'shortTime'}} </div>
-            <button class="clockButton" mat-raised-button color="primary" (click)="postClockEvent()">Clock {{clocking}}</button>
+            <button class="clockButton" mat-raised-button color="primary" (click)="postClockEvent()">
+                <mat-icon class="icon">schedule</mat-icon>
+                Clock {{clocking}}
+            </button>
         </mat-card-content>
     </mat-card>
 </div>

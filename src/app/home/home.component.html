@@ -2,22 +2,22 @@
   <mat-card class="homeCard">
     <h1 class={{className}}>Welcome home, {{ userFirstName }}.</h1>
     <div class="flex-container">
-      <button mat-button (click)='getLogs()'>
+      <button mat-raised-button (click)='getLogs()'>
         <mat-icon class="icon">work_history</mat-icon>
         TIMESHEET
         <p class="subtext">View your hours & pay</p>
       </button>
-      <button mat-button (click)='clock()'>
+      <button mat-raised-button (click)='clock()'>
         <mat-icon class="icon">schedule</mat-icon>
         CLOCK IN / OUT
         <p class="subtext">Start or end your shift</p>
       </button>
-      <button mat-button (click)='createNewUser()'>
+      <button mat-raised-button (click)='createNewUser()'>
         <mat-icon class="icon">person_add</mat-icon>
         CREATE NEW USER
         <p class="subtext">Add new employee to the system</p>
       </button>
-      <button mat-button (click)='manageEmployees()'>
+      <button mat-raised-button (click)='manageEmployees()'>
         <mat-icon class="icon">groups</mat-icon>
         MANAGE MY EMPLOYEES
         <p class="subtext">View your manager report</p>

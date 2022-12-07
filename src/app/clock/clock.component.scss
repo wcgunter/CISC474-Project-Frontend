@@ -61,3 +61,19 @@ mat-card-content {
 #time {
     font-size: 3rem;
 }
+
+.mat-raised-button{
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  button.mat-raised-button:hover {
+    background-color: #5462b5;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  }
+
+  .icon {
+    margin-right: 5px;
+    margin-top: -3px;
+    font-size: 500;
+  }

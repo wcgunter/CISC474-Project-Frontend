@@ -16,13 +16,20 @@
   text-align: center;
 }
 
-.mat-button{
+.mat-raised-button{
   margin: 2%;
   width: 440px;
   height: 95px;
   background-color: #3f51b5;
   color: white;
   font-size: large;
+}
+
+button.mat-raised-button:hover {
+  background-color: #5462b5;
+  //move button slightly
+  transform: translateY(-2px);
+  box-shadow: 0 10px 10px rgba(0,0,0,0.2);
 }
 
 .flex-container {
